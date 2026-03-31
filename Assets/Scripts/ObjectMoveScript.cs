@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectMoveScript : MonoBehaviour
+{
+    
+    private Rigidbody2D rb;
+    [SerializeField]
+    private float acceleration = 75f;
+    [SerializeField]
+    private float initialVelocity = 2f;
+    // Start is called before the first frame update
+    void Start()
+    {
+     
+
+        rb = GetComponent<Rigidbody2D>();
+
+       
+    }
+
+    // Update is called once per frame
+    
+    public void move(Vector2 direction)
+  {
+        rb.AddForce(direction * acceleration* Time.deltaTime);
+  }
+    public void StartSpeed(Vector2 direction)
+    {
+        rb.velocity = (direction * initialVelocity);
+    }
+}
