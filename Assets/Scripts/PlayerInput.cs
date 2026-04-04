@@ -12,15 +12,14 @@ public class PlayerInput : MonoBehaviour
     {
      
     }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButton("Fire1"))
         {
             float CurrentTime = Time.time;
-
             // Have a delay so we don't shoot too many bullets
+            // grabing the variables from the "ShootingScript" and using the information from it to set the fuctions
             if (CurrentTime - Shootscript.lastFiredTime > Shootscript.fireDelay)
             {
                 Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + Shootscript.bulletOffset);
@@ -28,9 +27,9 @@ public class PlayerInput : MonoBehaviour
                 Instantiate(Shootscript.bullet, spawnPosition, transform.rotation);
 
                 Shootscript.lastFiredTime = CurrentTime;
+                //print("Shoot!");
+                print("Shoot");
             }
-
-            //print("Shoot!");
         }
     }
 }

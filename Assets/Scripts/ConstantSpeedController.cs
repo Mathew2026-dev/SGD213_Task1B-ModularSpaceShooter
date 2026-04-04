@@ -15,11 +15,10 @@ public class ConstantSpeedController : MonoBehaviour
     {
      
     }
-    
-
     // Update is called once per frame
     void Update()
     {
+        //calling these 2 fuctions after setting up our direction vector, one for starting velocity and the other for overall movement speed
         objectmovescript.move(Direction);
         objectmovescript.StartSpeed(Direction);
     }
