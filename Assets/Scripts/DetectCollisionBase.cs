@@ -48,6 +48,7 @@ public class DetectCollisionBase : MonoBehaviour
     protected virtual void ProcessCollision(GameObject other) {
 
         print("Detected collision with " + other.name);
+        
     }
 }
 

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IHealth
+public class EnemyHealth : MonoBehaviour, IHealth
 {
     [SerializeField]
     protected int currentHealth;
@@ -37,7 +35,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        print("Health" + CurrentHealth);
+
         UIManager.instance.UpdatePlayerHealthSlider((float)currentHealth / (float)maxHealth);
 
         if (currentHealth <= 0)
@@ -57,3 +55,4 @@ public class PlayerHealth : MonoBehaviour, IHealth
         Destroy(gameObject);
     }
 }
+
