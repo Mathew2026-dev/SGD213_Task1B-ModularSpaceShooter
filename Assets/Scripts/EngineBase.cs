@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EngineBase : MonoBehaviour
+public abstract class EngineBase : MonoBehaviour
 {
     // acceleration indicates how fast the enemy accelerates
     [SerializeField]
-    private float acceleration = 5000f;
+    protected float Acceleration = 5000f;
 
     // local references
-    private Rigidbody2D ourRigidbody;
+    protected Rigidbody2D ourRigidbody;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class EngineBase : MonoBehaviour
     public void Accelerate(Vector2 direction)
     {
         //calculate our force to add
-        Vector2 forceToAdd = direction * acceleration * Time.deltaTime;
+        Vector2 forceToAdd = direction * Acceleration * Time.deltaTime;
         // apply forceToAdd to ourRigidbody
         ourRigidbody.AddForce(forceToAdd);
     }

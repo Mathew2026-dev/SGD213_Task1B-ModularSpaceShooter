@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponTripleShot : WeaponBase {
-
+    [SerializeField]
+    private float bulletDirection = 0.5f;
     /// <summary>
     /// Shoot will spawn a three bullets, provided enough time has passed compared to our fireDelay.
     /// </summary>
@@ -20,7 +21,10 @@ public class WeaponTripleShot : WeaponBase {
                 // create our bullet
                 GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
                 // set their direction
-                newBullet.GetComponent<MoveConstantly>().Direction = new Vector2(x + 0.3f * i, 0.5f);
+                    newBullet.GetComponent<MoveConstantly>().Direction = new Vector2(x + 0.3f * i, bulletDirection);
+             
+
+
             }
 
             // update our shooting state

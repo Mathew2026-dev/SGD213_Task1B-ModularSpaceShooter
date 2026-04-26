@@ -5,8 +5,9 @@ using UnityEngine;
 /// <summary>
 /// EnemyMovement handles all of the movement specifc state and behaviour for the enemy.
 /// </summary>
-public class EnemyMovement : MovementBase
+public class EnemyMovement : EngineBase
 {
+    
     /// <summary>
     /// MoveEnemy takes a direction as a parameter, and applies a force in this provided direction
     /// to ourRigidbody, based on the enemyAcceleration variables and the delta time.
@@ -16,6 +17,7 @@ public class EnemyMovement : MovementBase
         // a horizontalInput of 0 has no effect, as we want our ship to drift
         if (direction.magnitude != 0)
         {
+            
             //calculate our force to add
             Vector2 forceToAdd = direction * Acceleration * Time.deltaTime;
             // apply forceToAdd to ourRigidbody
